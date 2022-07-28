@@ -1,0 +1,35 @@
+{
+  "name": "cpf-cnpj-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/typescript/bin/tsc",
+    "lint": "eslint './src/**/*.*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qgx-pagamentos/cpf-cnpj-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qgx-pagamentos/cpf-cnpj-node/issues"
+  },
+  "homepage": "https://github.com/qgx-pagamentos/cpf-cnpj-node#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-typescript-enum": "^2.1.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  }
+}

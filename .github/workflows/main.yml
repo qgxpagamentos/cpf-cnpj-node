@@ -1,0 +1,42 @@
+name: Production
+
+on:
+  push:
+    branches:
+      - master    
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [14.18.3]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name : Setup git - access to repositories using ssh
+        run: |
+          git config --global user.email "admin@qgxpagamentos.com.br"
+          git config --global user.name "QGX INSTITUICAO DE PAGAMENTOS S.A."
+
+      - name: Using Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Typescript compiler
+        run: npm run build
+
+      - name: Commit
+        run: |
+          git add .
+          git commit -m "Github Actions - Bump version" 
+          git push
