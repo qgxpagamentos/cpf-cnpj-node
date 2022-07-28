@@ -30,7 +30,8 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM dependencies
-        run: npm install
+        run: |
+          npm 2>/dev/null install | true
 
       - name: Typescript compiler
         run: npm run build
