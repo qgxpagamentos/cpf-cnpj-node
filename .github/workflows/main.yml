@@ -38,6 +38,6 @@ jobs:
 
       - name: Commit
         run: |
-          git add .
-          git commit -m "Github Actions - Bump version" 
-          git push
+          git 2>/dev/null add .  | true
+          git 2>/dev/null commit -m "Github Actions - Bump version"  | true
+          git 2>/dev/null push | true
